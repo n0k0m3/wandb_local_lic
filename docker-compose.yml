@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  wandb:
+    image: wandb/local
+    container_name: wandb
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./jwks.json:/var/app/jwks.json:ro
+    environment:
+      - HOST=http://172.23.144.187:8080
